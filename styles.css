@@ -1,0 +1,53 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+* {
+    font-family: 'Sarabun', sans-serif;
+}
+body {
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  h1 {
+    color: blue;
+    font-size: 24px;
+  }
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .form-row label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-row input, .form-row select {
+    width: 100%; /* Full width within the column */
+    padding: 8px;
+    box-sizing: border-box; /* Include padding in width */
+  }
+
+  .form-row > div {
+    flex: 1; /* Grow equally */
+    margin-right: 10px; /* Space between columns */
+  }
+
+  .form-row > div:last-child {
+    margin-right: 0; /* Remove margin for last column */
+  }
+
+  label, input, select, textarea {
+    display: block;
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+  }
+  
+  .ui-datepicker {
+    width: auto !important;
+  }
+  
