@@ -77,17 +77,24 @@
       });
     });
 
-    document.getElementById('paymentForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+      $('#paymentForm').on('submit', function(event) {
+            event.preventDefault();
 
-      const formData = {
-        paymentDate: event.target.paymentDate.value,
-        payer: event.target.payer.value,
-        amount: event.target.amount.value,
-        description: event.target.description.value
-      };
-      
-      fetch('https://script.google.com/macros/s/AKfycbwGgeGK858qqPxrgns0fiqSASe_bFtWwt6FzvDGgDRYw9RPaDw0UmxfQ0H5NsGPzWBT1w/exec', {
+            const formData = {
+                paymentDate: $('#paymentDate').val(),
+                amount: $('#amount').val(),
+                payer: $('#payer').val(),
+                description: $('#description').val(),
+                selectedPayers: {
+                    "fern": $('input[name="payerCheckbox"][value="fern"]').is(':checked'),
+                    "fair": $('input[name="payerCheckbox"][value="fair"]').is(':checked'),
+                    "kiang": $('input[name="payerCheckbox"][value="kiang"]').is(':checked')
+                }
+            };
+            
+      console.log(formData);
+
+      fetch('https://script.google.com/macros/s/AKfycbw2LOAdpE81FIcEMIkgTaEGXI5gcJk39AnD78-qsH4TZuKe-xoYP1_SSWwdVbHEyZvOMQ/exec', {
         method: 'POST',
         mode: "no-cors",
         body: JSON.stringify(formData),
