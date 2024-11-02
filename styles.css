@@ -5,49 +5,123 @@
 * {
     font-family: 'Sarabun', sans-serif;
 }
+
 body {
     background-color: white;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-  }
-  h1 {
+}
+
+h1 {
     color: blue;
     font-size: 24px;
-  }
-  .form-row {
+}
+
+.form-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
-  }
-  
-  .form-row label {
+    gap: 10px;
+}
+
+.form-row label {
     display: block;
     margin-bottom: 5px;
-  }
+}
 
-  .form-row input, .form-row select {
-    width: 100%; /* Full width within the column */
+.form-row input, .form-row select {
+    width: 100%;
     padding: 8px;
-    box-sizing: border-box; /* Include padding in width */
-  }
+    box-sizing: border-box;
+}
 
-  .form-row > div {
-    flex: 1; /* Grow equally */
-    margin-right: 10px; /* Space between columns */
-  }
+.form-row > div {
+    flex: 1;
+}
 
-  .form-row > div:last-child {
-    margin-right: 0; /* Remove margin for last column */
-  }
-
-  label, input, select, textarea {
+label, input, select, textarea {
     display: block;
-    width: calc(100% - 20px);
+    width: 100%;
     margin-bottom: 15px;
-  }
-  
-  .ui-datepicker {
+    box-sizing: border-box;
+}
+
+/* Date Picker */
+.ui-datepicker {
     width: auto !important;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: flex;
+    gap: 15px; /* Space between each checkbox item */
+    width: 50%;
+}
+
+.checkbox-group label {
+    display: flex;
+    white-space: nowrap;
+    gap: 0px; /* Reduced gap between checkbox and label text */
+}
+
+.checkbox-group label input {
+  display: flex;
+  width: 40%;
+}
+
+.message-box {
+  display: none; /* Hide initially */
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #dff0d8; /* Light green background */
+  color: #3c763d; /* Dark green text */
+  border: 1px solid #d6e9c6;
+  border-radius: 5px;
+}
+
+.message-box.show {
+  display: block; /* Show on submit */
+}
+
+/* Responsive styles for iPhone 12 Pro Max (390px wide) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    label, input, select, textarea {
+        width: 100%;
+    }
+
+    .form-row input, .form-row select, textarea {
+        width: calc(100% - 20px);
+    }
+
+    .form-row > div {
+        margin-right: 0;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+    
+    label {
+        font-size: 14px;
+    }
+    
+    input, select, textarea {
+        font-size: 16px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      width: 100%;
   }
-  
+}
